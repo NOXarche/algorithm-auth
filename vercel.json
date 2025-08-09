@@ -1,14 +1,10 @@
 {
   "version": 2,
-  "builds": [
-    {
-      "src": "package.json",
-      "use": "@vercel/static-build",
-      "config": {
-        "distDir": "build"
-      }
-    }
-  ],
+  "name": "algorhythm-auth",
+  "buildCommand": "npm run build",
+  "outputDirectory": "build",
+  "installCommand": "npm install",
+  "framework": "create-react-app",
   "routes": [
     {
       "src": "/static/(.*)",
@@ -21,11 +17,6 @@
       "dest": "/index.html"
     }
   ],
-  "functions": {
-    "app/api/auth/[...nextauth].js": {
-      "maxDuration": 30
-    }
-  },
   "env": {
     "REACT_APP_ENVIRONMENT": "production"
   }
